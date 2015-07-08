@@ -14,6 +14,13 @@
 		6115B4441B4C05F000890737 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6115B4421B4C05F000890737 /* LaunchScreen.storyboard */; };
 		6115B44F1B4C05F000890737 /* CollegeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6115B44E1B4C05F000890737 /* CollegeViewTests.swift */; };
 		6115B45A1B4C05F000890737 /* CollegeViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6115B4591B4C05F000890737 /* CollegeViewUITests.swift */; };
+		6115B46A1B4C082B00890737 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6115B4691B4C082B00890737 /* DetailViewController.swift */; };
+		6115B46C1B4C08E000890737 /* College.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6115B46B1B4C08E000890737 /* College.swift */; };
+		6137C0DF1B4C8EF500835C01 /* images-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6137C0DC1B4C8EF500835C01 /* images-2.jpg */; };
+		6137C0E01B4C8EF500835C01 /* imgres.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6137C0DD1B4C8EF500835C01 /* imgres.jpg */; };
+		6137C0E11B4C8EF500835C01 /* logo-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6137C0DE1B4C8EF500835C01 /* logo-1.png */; };
+		6137C0E31B4C8FA500835C01 /* harvard-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6137C0E21B4C8FA500835C01 /* harvard-logo.png */; };
+		6137C0E51B4C904500835C01 /* stanford.png in Resources */ = {isa = PBXBuildFile; fileRef = 6137C0E41B4C904500835C01 /* stanford.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +54,13 @@
 		6115B4551B4C05F000890737 /* CollegeViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollegeViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6115B4591B4C05F000890737 /* CollegeViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeViewUITests.swift; sourceTree = "<group>"; };
 		6115B45B1B4C05F000890737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6115B4691B4C082B00890737 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		6115B46B1B4C08E000890737 /* College.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = College.swift; sourceTree = "<group>"; };
+		6137C0DC1B4C8EF500835C01 /* images-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "images-2.jpg"; path = "../../../images-2.jpg"; sourceTree = "<group>"; };
+		6137C0DD1B4C8EF500835C01 /* imgres.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = imgres.jpg; path = ../../../imgres.jpg; sourceTree = "<group>"; };
+		6137C0DE1B4C8EF500835C01 /* logo-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-1.png"; path = "../../../logo-1.png"; sourceTree = "<group>"; };
+		6137C0E21B4C8FA500835C01 /* harvard-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "harvard-logo.png"; path = "../../../harvard-logo.png"; sourceTree = "<group>"; };
+		6137C0E41B4C904500835C01 /* stanford.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stanford.png; path = ../../../stanford.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +91,8 @@
 		6115B42D1B4C05F000890737 = {
 			isa = PBXGroup;
 			children = (
+				6115B4691B4C082B00890737 /* DetailViewController.swift */,
+				6115B46B1B4C08E000890737 /* College.swift */,
 				6115B4381B4C05F000890737 /* CollegeView */,
 				6115B44D1B4C05F000890737 /* CollegeViewTests */,
 				6115B4581B4C05F000890737 /* CollegeViewUITests */,
@@ -98,9 +114,14 @@
 			isa = PBXGroup;
 			children = (
 				6115B4391B4C05F000890737 /* AppDelegate.swift */,
+				6137C0E21B4C8FA500835C01 /* harvard-logo.png */,
 				6115B43B1B4C05F000890737 /* ViewController.swift */,
 				6115B43D1B4C05F000890737 /* Main.storyboard */,
+				6137C0E41B4C904500835C01 /* stanford.png */,
 				6115B4401B4C05F000890737 /* Assets.xcassets */,
+				6137C0DC1B4C8EF500835C01 /* images-2.jpg */,
+				6137C0DD1B4C8EF500835C01 /* imgres.jpg */,
+				6137C0DE1B4C8EF500835C01 /* logo-1.png */,
 				6115B4421B4C05F000890737 /* LaunchScreen.storyboard */,
 				6115B4451B4C05F000890737 /* Info.plist */,
 			);
@@ -228,9 +249,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6137C0E11B4C8EF500835C01 /* logo-1.png in Resources */,
+				6137C0DF1B4C8EF500835C01 /* images-2.jpg in Resources */,
+				6137C0E01B4C8EF500835C01 /* imgres.jpg in Resources */,
 				6115B4441B4C05F000890737 /* LaunchScreen.storyboard in Resources */,
 				6115B4411B4C05F000890737 /* Assets.xcassets in Resources */,
+				6137C0E51B4C904500835C01 /* stanford.png in Resources */,
 				6115B43F1B4C05F000890737 /* Main.storyboard in Resources */,
+				6137C0E31B4C8FA500835C01 /* harvard-logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,8 +281,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6115B46A1B4C082B00890737 /* DetailViewController.swift in Sources */,
 				6115B43C1B4C05F000890737 /* ViewController.swift in Sources */,
 				6115B43A1B4C05F000890737 /* AppDelegate.swift in Sources */,
+				6115B46C1B4C08E000890737 /* College.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +511,7 @@
 				6115B4601B4C05F000890737 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6115B4611B4C05F000890737 /* Build configuration list for PBXNativeTarget "CollegeViewTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +520,7 @@
 				6115B4631B4C05F000890737 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6115B4641B4C05F000890737 /* Build configuration list for PBXNativeTarget "CollegeViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +529,7 @@
 				6115B4661B4C05F000890737 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
