@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Ugk-iY-O4J">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyCell" id="Ugk-iY-O4J">
                                         <rect key="frame" x="0.0" y="86" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ugk-iY-O4J" id="47U-Qp-R6J">
@@ -32,6 +32,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="1Bf-Yr-Dyb"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="KRa-pd-Uta"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -57,7 +61,7 @@
             </objects>
             <point key="canvasLocation" x="1032" y="387"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Detail View-->
         <scene sceneID="YNl-I0-QTQ">
             <objects>
                 <viewController id="oqA-H5-pBT" customClass="DetailViewController" customModule="CollegeView" customModuleProvider="target" sceneMemberID="viewController">
@@ -69,37 +73,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fgi-VF-hdu">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fgi-VF-hdu">
                                 <rect key="frame" x="252" y="128" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="btZ-Tt-SKj">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="btZ-Tt-SKj">
                                 <rect key="frame" x="252" y="178" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8B2-ot-DFe">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3wf-C7-3qX">
+                                <rect key="frame" x="252" y="241" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="110" translatesAutoresizingMaskIntoConstraints="NO" id="8B2-ot-DFe">
                                 <rect key="frame" x="180" y="293" width="240" height="128"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJy-dG-dh1">
-                                <rect key="frame" x="277" y="444" width="34" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xsH-SI-7H2">
+                                <rect key="frame" x="258" y="482" width="85" height="30"/>
+                                <state key="normal" title="Web Access"/>
+                                <connections>
+                                    <action selector="displayWebsiteTapped:" destination="oqA-H5-pBT" eventType="touchUpInside" id="Skf-PL-gZO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJy-dG-dh1">
+                                <rect key="frame" x="283" y="444" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="onSaveButtonTapped:" destination="oqA-H5-pBT" eventType="touchUpInside" id="nrh-Sf-CUQ"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3wf-C7-3qX">
-                                <rect key="frame" x="252" y="241" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ITh-6f-hSn">
+                                <rect key="frame" x="258" y="513" width="83" height="30"/>
+                                <state key="normal" title="Map Access"/>
+                                <connections>
+                                    <segue destination="h65-eC-mod" kind="presentation" id="xBO-qY-hex"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xsH-SI-7H2" firstAttribute="centerX" secondItem="P7L-hf-Sh0" secondAttribute="centerX" id="3Xm-ow-rCy"/>
+                            <constraint firstItem="fgi-VF-hdu" firstAttribute="centerX" secondItem="P7L-hf-Sh0" secondAttribute="centerX" id="8NP-Kk-8a2"/>
+                            <constraint firstItem="xsH-SI-7H2" firstAttribute="top" secondItem="VJy-dG-dh1" secondAttribute="bottom" constant="8" id="Ddx-lK-QHE"/>
+                            <constraint firstItem="VJy-dG-dh1" firstAttribute="centerX" secondItem="P7L-hf-Sh0" secondAttribute="centerX" id="IG8-6l-3HE"/>
+                            <constraint firstItem="3wf-C7-3qX" firstAttribute="top" secondItem="btZ-Tt-SKj" secondAttribute="bottom" constant="33" id="NcB-aj-L8O"/>
+                            <constraint firstItem="8B2-ot-DFe" firstAttribute="top" secondItem="3wf-C7-3qX" secondAttribute="bottom" constant="22" id="SpS-Ly-lGw"/>
+                            <constraint firstItem="btZ-Tt-SKj" firstAttribute="centerX" secondItem="P7L-hf-Sh0" secondAttribute="centerX" id="Uod-e2-NGC"/>
+                            <constraint firstItem="3wf-C7-3qX" firstAttribute="centerX" secondItem="P7L-hf-Sh0" secondAttribute="centerX" id="f9L-1d-opf"/>
+                            <constraint firstItem="VJy-dG-dh1" firstAttribute="top" secondItem="8B2-ot-DFe" secondAttribute="bottom" constant="23" id="rkm-AJ-Q4W"/>
+                            <constraint firstItem="btZ-Tt-SKj" firstAttribute="top" secondItem="fgi-VF-hdu" secondAttribute="bottom" constant="20" id="wOc-09-8w0"/>
+                            <constraint firstItem="8B2-ot-DFe" firstAttribute="centerX" secondItem="P7L-hf-Sh0" secondAttribute="centerX" id="x4a-v8-K1Z"/>
+                            <constraint firstItem="ITh-6f-hSn" firstAttribute="centerX" secondItem="P7L-hf-Sh0" secondAttribute="centerX" id="yjh-Xo-uDs"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Detail View" id="ZZc-12-fNA">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="Vro-ZM-oge">
+                            <connections>
+                                <action selector="cameraButtonTapped:" destination="oqA-H5-pBT" id="cXv-Mh-yIF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="collegeTextField" destination="fgi-VF-hdu" id="0RJ-Fg-n7L"/>
-                        <outlet property="imageView" destination="8B2-ot-DFe" id="2Fd-fc-Z6E"/>
+                        <outlet property="collegeTextField" destination="fgi-VF-hdu" id="qaS-6H-oNK"/>
+                        <outlet property="imageView" destination="8B2-ot-DFe" id="58U-dS-FtO"/>
                         <outlet property="stateTextField" destination="btZ-Tt-SKj" id="Ycx-mA-6Yi"/>
                         <outlet property="studentsTextField" destination="3wf-C7-3qX" id="f8n-8l-Fpv"/>
                     </connections>
@@ -107,6 +146,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mau-4g-2gU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1687" y="387"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="WI6-ep-M8Q">
+            <objects>
+                <viewController id="h65-eC-mod" customClass="MapViewController" customModule="CollegeView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HZn-AK-Oto"/>
+                        <viewControllerLayoutGuide type="bottom" id="rBL-NM-SwH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sOI-9E-RAh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Sry-mq-0Rt">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zYx-Nr-Acx">
+                                <rect key="frame" x="252" y="107" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="Sry-mq-0Rt" id="HFv-Gp-2Lh"/>
+                        <outlet property="textField" destination="zYx-Nr-Acx" id="W6E-g3-Enl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A3s-ho-Nl3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2375" y="387"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cuR-wS-640">
