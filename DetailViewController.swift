@@ -73,10 +73,10 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
         actionSheet.addAction(cameraAction)
         actionSheet.addAction(libraryAction)
         actionSheet.addAction(cancelAction)
-    
+        
         self.presentViewController(actionSheet, animated: true, completion: nil)
     }
-
+    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage info: [String : AnyObject]) {
         dismissViewControllerAnimated(true) { () -> Void in
             if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
@@ -86,9 +86,12 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
         }
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let dvc = segue.destinationViewController as? DetailViewController
-        dvc.collegeTextField.text! = college.name
-        dvc.stateTextField.text! = college.state
-        dvc.studentsTextField.text! = String(college.students)}
-
+        let mvc = segue.destinationViewController as! MapViewController
+        let location = college.name + "," + college.state
+        
+        //mvc!.collegeTextField.text! = college.name
+        //mvc!.stateTextField.text! = college.state
+        //mvc!.studentsTextField.text! = String(college.students)}
+        //var placemark = ""
+    }
 }

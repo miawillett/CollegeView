@@ -109,7 +109,7 @@
                                 <rect key="frame" x="258" y="513" width="83" height="30"/>
                                 <state key="normal" title="Map Access"/>
                                 <connections>
-                                    <segue destination="h65-eC-mod" kind="presentation" id="xBO-qY-hex"/>
+                                    <segue destination="h65-eC-mod" kind="show" id="56J-Ng-D6o"/>
                                 </connections>
                             </button>
                         </subviews>

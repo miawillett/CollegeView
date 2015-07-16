@@ -21,20 +21,21 @@ class MapViewController: UIViewController, UITextFieldDelegate {
         
     }
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        locationName! = textField.text
+        locationName = textField.text!
         textField.resignFirstResponder()
         findLocation()
         return true
     }
     func findLocation() {
-        let alert = UIAlertController (title: "Select a location", message: nil, preferredStyle: UIAlertControllerStyle)
-        let geocoder = CLGeocoder
-        geocoder.geocodeAddressString(locationName, completionHandler:
-            { placemarks, error in
+        let alert = UIAlertController(title: "Select a location", message: nil, preferredStyle: .ActionSheet)
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString(locationName, completionHandler: {
+            placemarks, error in
                 if (error != nil) {
                     print("error")
                 }
                 else {
+                    
                     var number = placemarks!.count
                     if number == 1 {
                         let placemark = placemarks!.first as CLPlacemark!
@@ -44,28 +45,28 @@ class MapViewController: UIViewController, UITextFieldDelegate {
                         if number > 5 { number = 5}
                         for index in 0..<number {
                             let placemark = placemarks![index] as CLPlacemark!
-                            let name = placemarks.name
+                            let name = placemark.name
                             let city = placemark.locality
-                            let state = placemarks.administrativeArea
+                            let state = placemark.administrativeArea
                             let location = "\(name), \(city), \(state)"
-                            let locationAction = UIAlertAction (title: location, style: .Default, handler: {(action) -> VOID)
+                            let locationAction = UIAlertAction(title: location, style: .Default, handler: { (action) -> Void in
                                 self.displayMap(placemark)
                             })
                             alert.addAction(locationAction)
                         }
-                        let cancelAction = UIAlertAction(title: "Cancel", style: cancel, handler: nil)
+                        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
                         alert.addAction(cancelAction)
                         self.presentViewController(alert, animated: true, completion: nil)
                     }
                 }
         })
     }
-    func displayMap () {
+    func displayMap (placemark: CLPlacemark) {
         let name = placemark.name
         let city = placemark.locality
         let state = placemark.administrativeArea
         let location = "\(name), \(city), \(state)"
-        let center = placemark.location.coordinate
+        let center = placemark.location!.coordinate
         let span = MKCoordinateSpanMake(0.1, 0.1)
         let region = MKCoordinateRegionMake(center, span)
         let pin = MKPointAnnotation()
